@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Alexis Cervantes García - AWS Technical Lead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); }
+        .skill-bar { transition: width 0.8s ease-in-out; }
+        @media print {
+            .no-print { display: none; }
+            @page {
+                size: letter;
+                margin: 0.5in;
+            }
+            body { 
+                background: white !important; 
+                margin: 0 !important;
+                padding: 0 !important;
+                font-size: 11px !important;
+                line-height: 1.4 !important;
+                transform: scale(0.88);
+                transform-origin: top left;
+                width: 114% !important;
+            }
+            .max-w-4xl {
+                max-width: none !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+            }
+            .shadow-2xl {
+                box-shadow: none !important;
+            }
+            .bg-gray-50 {
+                background: white !important;
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                padding: 1.5rem !important;
+            }
+            .bg-orange-50, .bg-blue-50, .bg-red-50, .bg-green-50, .bg-purple-50 {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .text-orange-600, .text-blue-600, .text-red-600, .text-green-600, .text-purple-600 {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .border-orange-200, .border-blue-200, .border-red-200, .border-green-200, .border-purple-200 {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .bg-gradient-to-br {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .print-compact {
+                margin-bottom: 0.75rem !important;
+            }
+            .print-compact-sm {
+                margin-bottom: 0.5rem !important;
+            }
+            .print-text-xs {
+                font-size: 10px !important;
+            }
+            .print-text-sm {
+                font-size: 11px !important;
+            }
+            .print-p-compact {
+                padding: 0.75rem !important;
+            }
+            .print-p-sm {
+                padding: 0.5rem !important;
+            }
+            h1 { font-size: 1.8rem !important; margin-bottom: 0.4rem !important; }
+            h2 { font-size: 1rem !important; margin-bottom: 0.6rem !important; }
+            h3 { font-size: 1.1rem !important; margin-bottom: 0.5rem !important; }
+            h4 { font-size: 0.9rem !important; margin-bottom: 0.3rem !important; }
+            .space-y-6 > * + * { margin-top: 0.8rem !important; }
+            .space-y-3 > * + * { margin-top: 0.4rem !important; }
+            .space-y-2 > * + * { margin-top: 0.3rem !important; }
+            .mb-8 { margin-bottom: 0.8rem !important; }
+            .mb-6 { margin-bottom: 0.6rem !important; }
+            .mb-4 { margin-bottom: 0.5rem !important; }
+            .mb-3 { margin-bottom: 0.4rem !important; }
+            .mb-2 { margin-bottom: 0.3rem !important; }
+            .mb-1 { margin-bottom: 0.2rem !important; }
+            .p-8 { padding: 1.2rem !important; }
+            .p-6 { padding: 0.8rem !important; }
+            .p-4 { padding: 0.6rem !important; }
+            .p-3 { padding: 0.5rem !important; }
+            .p-2 { padding: 0.4rem !important; }
+            .gap-6 { gap: 0.8rem !important; }
+            .gap-4 { gap: 0.6rem !important; }
+            .gap-3 { gap: 0.5rem !important; }
+            .gap-1 { gap: 0.2rem !important; }
+            .leading-relaxed { line-height: 1.3 !important; }
+            
+            /* Forzar salto de página después del header */
+            .gradient-bg { page-break-after: avoid !important; }
+            .md\\:col-span-1 { page-break-inside: avoid !important; }
+            
+            /* Controlar altura de secciones */
+            section { break-inside: avoid !important; }
+            .border-l-4 { break-inside: avoid !important; margin-bottom: 0.5rem !important; }
+            
+            /* Optimizar grid para impresión */
+            .grid.md\\:grid-cols-3 { 
+                display: block !important; 
+                columns: 2 !important; 
+                column-gap: 1rem !important;
+                column-fill: balance !important;
+            }
+            .md\\:col-span-1, .md\\:col-span-2 { 
+                column-span: none !important; 
+                break-inside: avoid !important;
+                display: inline-block !important;
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Print Button -->
+    <div class="fixed top-4 right-4 z-50 no-print">
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 transition-all duration-200 hover:scale-105">
+            <i class="fas fa-print"></i>
+            <span class="hidden sm:inline">Imprimir / Descargar</span>
+        </button>
+    </div>
+
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl">
+        <!-- Header Section -->
+        <div class="gradient-bg text-white p-8">
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center overflow-hidden border-4 border-white/30">
+                    <img src="https://ik.imagekit.io/rxf40pjb3/Alexis_Foto-removebg-preview.png?updatedAt=" alt="Alexis Cervantes García" class="w-28 h-28 object-cover object-center rounded-full">
+                </div>
+                <div class="text-center md:text-left flex-1">
+                    <h1 class="text-4xl font-bold mb-2">Alexis Cervantes García</h1>
+                    <h2 class="text-xl font-light mb-4 opacity-90">AWS Technical Lead | Arquitecto Cloud (AWS/Azure) & DevSecOps</h2>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            <span>55 8594 5900</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Villahermosa, Tabasco (México)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/alexiscervantes</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>alexis.cega@outlook.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-0">
+            <!-- Left Column -->
+            <div class="md:col-span-1 bg-gray-100 p-6">
+                <!-- Certificaciones -->
+                <section class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">
+                        <i class="fas fa-certificate mr-2 text-blue-600"></i>Certificaciones
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="bg-orange-50 p-2 rounded-lg shadow-sm border border-orange-200">
+                            <h4 class="font-semibold text-xs text-gray-800">AWS Solutions Architect</h4>
+                            <p class="text-xs text-orange-600">Professional</p>
+                        </div>
+                        <div class="bg-orange-50 p-2 rounded-lg shadow-sm border border-orange-200">
+                            <h4 class="font-semibold text-xs text-gray-800">AWS Solutions Architect</h4>
+                            <p class="text-xs text-orange-600">Associate</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded-lg shadow-sm border border-blue-200">
+                            <h4 class="font-semibold text-xs text-gray-800">Azure Administrator</h4>
+                            <p class="text-xs text-blue-600">Associate</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded-lg shadow-sm border border-blue-200">
+                            <h4 class="font-semibold text-xs text-gray-800">Azure Fundamentals</h4>
+                            <p class="text-xs text-blue-600">AZ-900</p>
+                        </div>
+                        <div class="bg-red-50 p-2 rounded-lg shadow-sm border border-red-200">
+                            <h4 class="font-semibold text-xs text-gray-800">Google Cloud</h4>
+                            <p class="text-xs text-red-600">Associate Cloud Engineer</p>
+                        </div>
+                        <div class="bg-green-50 p-2 rounded-lg shadow-sm border border-green-200">
+                            <h4 class="font-semibold text-xs text-gray-800">Scrum Master</h4>
+                            <p class="text-xs text-green-600">Certified</p>
+                        </div>
+                        <div class="bg-green-50 p-2 rounded-lg shadow-sm border border-green-200">
+                            <h4 class="font-semibold text-xs text-gray-800">Scrum Fundamentals</h4>
+                            <p class="text-xs text-green-600">Certified</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tecnologías -->
+                <section class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">
+                        <i class="fas fa-cogs mr-2 text-blue-600"></i>Tecnologías
+                    </h3>
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">AWS</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">EKS</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Lambda</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">RDS</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">API Gateway</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Cognito</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">S3</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">CloudFront</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">WAF</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">KMS</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Bedrock</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">EC2</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">VPC</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">DMS</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">DataSync</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">SageMaker</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">GuardDuty</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Config</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">CloudWatch</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">IAM</span>
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Route53</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Azure</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">AKS</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">VNet</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Key Vault</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Monitor</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">DevOps</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">SQL Database</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Storage</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Functions</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">App Service</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Load Balancer</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">API Management</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Active Directory</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Data Factory</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Migrate</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Google Cloud (GCP)</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">GKE</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Compute Engine</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Cloud SQL</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Cloud Storage</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Cloud Functions</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">VPC</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">BigQuery</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Cloud Build</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">IAM</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Cloud DNS</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Oracle Cloud (OCI)</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Compute</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">VCN</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Database</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Object Storage</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Load Balancer</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Container Engine</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Functions</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">IAM</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">DevOps/IaC</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Terraform</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">CloudFormation</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">GitHub</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Jenkins</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Docker</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Kubernetes</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">GitLab CI</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Ansible</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Helm</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Seguridad</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">OWASP</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">CIS</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">ISO 27001</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">SAST/DAST</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Vault</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">SonarQube</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Snyk</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cumplimiento y Seguridad -->
+                <section class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b-2 border-red-500 pb-2">
+                        <i class="fas fa-shield-alt mr-2 text-red-600"></i>Cumplimiento y Seguridad
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-red-50 p-3 rounded-lg border border-red-200">
+                            <h4 class="font-semibold text-sm text-gray-800 mb-1">ISO 27001</h4>
+                            <p class="text-xs text-gray-600">Control de accesos, cifrado, auditoría, continuidad</p>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-lg border border-red-200">
+                            <h4 class="font-semibold text-sm text-gray-800 mb-1">CIS Benchmarks</h4>
+                            <p class="text-xs text-gray-600">Hardening, posture analysis</p>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-lg border border-red-200">
+                            <h4 class="font-semibold text-sm text-gray-800 mb-1">OWASP</h4>
+                            <p class="text-xs text-gray-600">S-SDLC, protección de APIs, autenticación/autorización robusta</p>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-lg border border-red-200">
+                            <h4 class="font-semibold text-sm text-gray-800 mb-1">Redes Seguras</h4>
+                            <p class="text-xs text-gray-600">Squid, firewalls, PrivateLink, segmentación</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Educación -->
+                <section>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b-2 border-purple-500 pb-2">
+                        <i class="fas fa-graduation-cap mr-2 text-purple-600"></i>Educación
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-purple-50 p-3 rounded-lg border border-purple-200">
+                            <h4 class="font-semibold text-sm text-gray-800">Instituto Tecnológico de Tlalnepantla (ITTLA)</h4>
+                            <p class="text-xs text-purple-600">Ingeniería en Mecatrónica</p>
+                            <p class="text-xs text-gray-500">2014 – 2019</p>
+                            <p class="text-xs text-gray-500">Estudios concluidos; titulación en trámite (liberación de residencias y proceso de titulación en curso)</p>
+                        </div>
+                        <div class="bg-purple-50 p-3 rounded-lg border border-purple-200">
+                            <h4 class="font-semibold text-sm text-gray-800">CBTis No. 227 "Otilio E. Montaño Sánchez"</h4>
+                            <p class="text-xs text-purple-600">Técnico en Soporte y Mantenimiento de Equipo de Cómputo</p>
+                            <p class="text-xs text-gray-500">2011 – 2014</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="md:col-span-2 p-6">
+                <!-- Perfil Profesional -->
+                <section class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">
+                        <i class="fas fa-user-circle mr-2 text-blue-600"></i>Perfil Profesional
+                    </h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        AWS Technical Lead especializado en arquitectura cloud híbrida (AWS/Azure) y DevSecOps con amplia experiencia en el diseño e implementación de soluciones escalables y seguras. Experto en cumplimiento normativo (ISO 27001, CIS Benchmarks, OWASP) y optimización de costos mediante FinOps. Certificado en AWS Solutions Architect Professional y Azure Administrator, con sólidos conocimientos en infraestructura como código, CI/CD y seguridad en la nube.
+                    </p>
+                </section>
+
+                <!-- Experiencia Profesional -->
+                <section class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-blue-500 pb-2">
+                        <i class="fas fa-briefcase mr-2 text-blue-600"></i>Experiencia Profesional
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-blue-500 pl-12 relative">
+                            <div class="absolute w-16 h-16 bg-blue-500 rounded-full -left-8 top-0 flex items-center justify-center">
+                                <span class="text-xs text-white font-medium text-center leading-tight">2024<br>Actual</span>
+                            </div>
+                            <div class="mb-2">
+                                <h4 class="text-lg font-semibold text-gray-800">AWS Technical Lead</h4>
+                                <p class="text-sm text-gray-600 mb-1">Arquitectura & DevSecOps</p>
+                            </div>
+                            <p class="text-blue-600 font-medium mb-3">Hoteles City (City Express)</p>
+                            <div class="text-gray-700 text-sm leading-relaxed">
+                                <p class="mb-1">Encabecé el levantamiento completo de una suite de módulos (modelo tipo stack-up/price) 100% en AWS, desde arquitectura hasta operación, integrando microservicios en Amazon EKS, funciones AWS Lambda, API Gateway para exposición segura, Amplify para frontends y Cognito para identidad (OAuth2/OIDC, MFA).</p>
+                                
+                                <p class="mb-1">Diseñé la plataforma con RDS PostgreSQL/MySQL, S3 (artefactos/data lake), DataSync, CloudFront y ALB, protegida por WAF/Shield, cifrado con KMS y segmentación en VPC; incorporé IA con Amazon Bedrock y servicios de scraping resilientes (colas, backpressure, rotación y observabilidad).</p>
+                                
+                                <p class="mb-1">Implementé DevSecOps en GitHub con GitFlow, branch protection rules, code owners, revisiones obligatorias, checks de seguridad (SAST/dependencias) y políticas de releases, integrando CodeBuild/CodePipeline y CloudFormation/Terraform para despliegues progresivos y rollback.</p>
+                                
+                                <p>Definí y ejecuté la estrategia de documentación (ADRs, diagramas C4, playbooks/runbooks operativos, catálogos de APIs, plantillas de PR y versionado semántico con checklist de liberación y de ISO 27001), estandarizando el conocimiento, acelerando el onboarding y asegurando trazabilidad end-to-end entre módulos e integraciones.</p>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-blue-500 pl-12 relative">
+                            <div class="absolute w-16 h-16 bg-blue-500 rounded-full -left-8 top-0 flex items-center justify-center">
+                                <span class="text-xs text-white font-medium text-center leading-tight">2022<br>2024</span>
+                            </div>
+                            <div class="mb-2">
+                                <h4 class="text-lg font-semibold text-gray-800">Architecture Senior Expert</h4>
+                            </div>
+                            <p class="text-blue-600 font-medium mb-3">BBVA México (Business Execution MX 10)</p>
+                            <div class="text-gray-700 text-sm leading-relaxed">
+                                <p class="mb-1">Lideré la Data Zone híbrida en AWS y Azure definiendo gobierno, seguridad y redes privadas para cargas de datos y aplicaciones a escala empresarial. Establecí blueprints reutilizables (red, seguridad, datos) con CIS Benchmarks y OWASP como referencia, estándar de etiquetado y least-privilege en IAM/SSO, además de KMS/Key Vault, SCPs y controles de cumplimiento.</p>
+                                
+                                <p class="mb-1">Orquesté conectividad segura con VPC/VNet, Transit Gateway/peering, PrivateLink/Private Endpoints, proxy Squid para egress controlado y firewalls perimetrales/segmentados. Industrialicé IaC con Terraform y pipelines CI/CD (Jenkins/Azure DevOps), asegurando promoción entre entornos con validaciones de calidad y seguridad; implementé observabilidad con CloudWatch/Azure Monitor, WAF/NSG/SG y gestión de secretos con rotación, coordinando con equipos en España para alinear estándares y catálogos.</p>
+                                
+                                <p>Logré además la optimización de costos de la plataforma mediante FinOps (rightsizing, Savings Plans/Reserved Instances, apagado de no productivos, políticas de retención de logs, niveles de S3 y etiquetado para chargeback/showback), reduciendo de forma consistente el gasto mensual sin afectar la disponibilidad.</p>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-blue-500 pl-12 relative">
+                            <div class="absolute w-16 h-16 bg-blue-500 rounded-full -left-8 top-0 flex items-center justify-center">
+                                <span class="text-xs text-white font-medium text-center leading-tight">2020<br>2021</span>
+                            </div>
+                            <div class="mb-2">
+                                <h4 class="text-lg font-semibold text-gray-800">Senior Cloud Engineer y DevOps</h4>
+                            </div>
+                            <p class="text-blue-600 font-medium mb-3">Grupo Salinas</p>
+                            <div class="text-gray-700 text-sm leading-relaxed">
+                                <p class="mb-1">Lideré equipos multidisciplinarios en el diseño, implementación y gestión de soluciones en la nube altamente escalables y eficientes. Colaboré estrechamente con ingenieros y desarrolladores para orquestar pipelines de CI/CD utilizando herramientas como Jenkins y GitLab, optimizando así la entrega continua de aplicaciones clave como el sistema de gestión logística y la plataforma de comercio electrónico.</p>
+                                
+                                <p class="mb-1">Desempeñé un papel crucial en la migración exitosa de infraestructuras heredadas a entornos basados en contenedores mediante el uso de Docker y Kubernetes, garantizando la disponibilidad y el rendimiento óptimo de servicios críticos como nuestro sistema de seguimiento en tiempo real.</p>
+                                
+                                <p>Mi contribución en la automatización de la infraestructura a través de Terraform permitió una administración más ágil y segura de recursos en la nube.</p>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-blue-500 pl-12 relative">
+                            <div class="absolute w-16 h-16 bg-blue-500 rounded-full -left-8 top-0 flex items-center justify-center">
+                                <span class="text-xs text-white font-medium text-center leading-tight">2019<br>2020</span>
+                            </div>
+                            <div class="mb-2">
+                                <h4 class="text-lg font-semibold text-gray-800">Arquitecto de Soluciones</h4>
+                            </div>
+                            <p class="text-blue-600 font-medium mb-3">MyAppSoftware</p>
+                            <div class="text-gray-700 text-sm leading-relaxed">
+                                <p class="mb-1">Lideré la concepción y presentación de enfoques estratégicos para clientes, abarcando desde la creación de calculadoras de costos y sesiones de planificación, hasta la generación de diagramas detallados y propuestas finales en entornos como AWS, Azure, GCP, Google Workspace y Office 365, así como soluciones Cloudberry, Adobe y Microsoft VLSC.</p>
+                                
+                                <p class="mb-1">Ejecuté implementaciones técnicas de vanguardia, destacando el despliegue de instancias EC2, S3, VPC, CloudWatch, CloudFront, ELB, AMI, Microservicios, Serverless y más en AWS, así como la configuración de recursos clave como Virtual Machines, Load Balancers, VPN Gateways y almacenamiento Blob en Azure, y la adopción de Compute Engine, App Engine, Bigtable, VPC y Cloud DNS en GCP.</p>
+                                
+                                <p>Participé activamente en migraciones y respaldos utilizando herramientas como CloudEndure, CloudBerry y AWS DataSync, proporcioné formación y seminarios a clientes y escuelas sobre las ofertas de nube y tecnologías asociadas, y colaboré estrechamente con el equipo de ventas para ofrecer soluciones óptimas y asesoramiento personalizado basado en las prácticas recomendadas de AWS Well-Architected.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Logros Destacados -->
+                <section>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2">
+                        <i class="fas fa-trophy mr-2 text-green-600"></i>Logros Destacados
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-green-50 to-blue-50 p-3 rounded-lg border border-green-200">
+                            <h4 class="font-semibold text-gray-800 mb-1">Jerarquía Organizacional</h4>
+                            <p class="text-gray-700 text-sm mb-2">Establecimiento de estructura organizacional escalable con governance, roles definidos y procesos estandarizados para equipos multidisciplinarios</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Governance</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Leadership</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Organization</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-3 rounded-lg border border-orange-200">
+                            <h4 class="font-semibold text-gray-800 mb-1">AWS Well-Architected Framework</h4>
+                            <p class="text-gray-700 text-sm mb-2">Implementación completa de los 6 pilares: Excelencia Operacional, Seguridad, Confiabilidad, Eficiencia de Rendimiento, Optimización de Costos y Sostenibilidad</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Well-Architected</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">6 Pillars</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Best Practices</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-3 rounded-lg border border-purple-200">
+                            <h4 class="font-semibold text-gray-800 mb-1">Tecnologías Serverless</h4>
+                            <p class="text-gray-700 text-sm mb-2">Adopción y liderazgo en arquitecturas serverless con Lambda, API Gateway, Step Functions, EventBridge y servicios managed para escalabilidad automática</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Serverless</span>
+                                <span class="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded">Lambda</span>
+                                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded">Event-Driven</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-3 rounded-lg border border-blue-200">
+                            <h4 class="font-semibold text-gray-800 mb-1">Impacto Arquitectónico</h4>
+                            <p class="text-gray-700 text-sm mb-2">Transformación de arquitecturas monolíticas a microservicios, mejorando escalabilidad, mantenibilidad y time-to-market de productos</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Microservices</span>
+                                <span class="text-xs bg-cyan-100 text-cyan-800 px-2 py-1 rounded">Scalability</span>
+                                <span class="text-xs bg-teal-100 text-teal-800 px-2 py-1 rounded">Modernization</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-3 rounded-lg border border-green-200">
+                            <h4 class="font-semibold text-gray-800 mb-1">Metodología Ágil</h4>
+                            <p class="text-gray-700 text-sm mb-2">Implementación de Scrum y DevOps, reduciendo ciclos de entrega de meses a semanas, con ceremonias, retrospectivas y mejora continua</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Scrum</span>
+                                <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-1 rounded">Agile</span>
+                                <span class="text-xs bg-lime-100 text-lime-800 px-2 py-1 rounded">DevOps</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-red-50 to-rose-50 p-3 rounded-lg border border-red-200">
+                            <h4 class="font-semibold text-gray-800 mb-1">Seguridad Integral</h4>
+                            <p class="text-gray-700 text-sm mb-2">Implementación de Security by Design, Zero Trust, compliance frameworks (ISO 27001, SOC 2), SAST/DAST y threat modeling en todas las soluciones</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Zero Trust</span>
+                                <span class="text-xs bg-rose-100 text-rose-800 px-2 py-1 rounded">Security by Design</span>
+                                <span class="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded">Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animate skill bars on page load
+        window.addEventListener('load', function() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96ab15e3260daec5',t:'MTc1NDQ0NzE0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
