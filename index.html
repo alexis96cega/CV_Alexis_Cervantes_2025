@@ -5,128 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Alexis Cervantes García - AWS Technical Lead</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); } 
+        .gradient-bg { background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); }
         .skill-bar { transition: width 0.8s ease-in-out; }
         @media print {
             .no-print { display: none; }
-            @page {
-                size: letter;
-                margin: 0.5in;
-            }
-            body { 
-                background: white !important; 
-                margin: 0 !important;
-                padding: 0 !important;
-                font-size: 11px !important;
-                line-height: 1.4 !important;
-                transform: scale(0.88);
-                transform-origin: top left;
-                width: 114% !important;
-            }
-            .max-w-4xl {
-                max-width: none !important;
-                margin: 0 !important;
-                box-shadow: none !important;
-            }
-            .shadow-2xl {
-                box-shadow: none !important;
-            }
-            .bg-gray-50 {
-                background: white !important;
-            }
-            .gradient-bg {
-                background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%) !important;
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                padding: 1.5rem !important;
-            }
-            .bg-orange-50, .bg-blue-50, .bg-red-50, .bg-green-50, .bg-purple-50 {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-            .text-orange-600, .text-blue-600, .text-red-600, .text-green-600, .text-purple-600 {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-            .border-orange-200, .border-blue-200, .border-red-200, .border-green-200, .border-purple-200 {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-            .bg-gradient-to-br {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
+            @page { size: Letter; margin: 0.5in; }
             * {
                 -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
-            .print-compact {
-                margin-bottom: 0.75rem !important;
-            }
-            .print-compact-sm {
-                margin-bottom: 0.5rem !important;
-            }
-            .print-text-xs {
-                font-size: 10px !important;
-            }
-            .print-text-sm {
-                font-size: 11px !important;
-            }
-            .print-p-compact {
-                padding: 0.75rem !important;
-            }
-            .print-p-sm {
-                padding: 0.5rem !important;
-            }
-            h1 { font-size: 1.8rem !important; margin-bottom: 0.4rem !important; }
-            h2 { font-size: 1rem !important; margin-bottom: 0.6rem !important; }
-            h3 { font-size: 1.1rem !important; margin-bottom: 0.5rem !important; }
-            h4 { font-size: 0.9rem !important; margin-bottom: 0.3rem !important; }
-            .space-y-6 > * + * { margin-top: 0.8rem !important; }
-            .space-y-3 > * + * { margin-top: 0.4rem !important; }
-            .space-y-2 > * + * { margin-top: 0.3rem !important; }
-            .mb-8 { margin-bottom: 0.8rem !important; }
-            .mb-6 { margin-bottom: 0.6rem !important; }
-            .mb-4 { margin-bottom: 0.5rem !important; }
-            .mb-3 { margin-bottom: 0.4rem !important; }
-            .mb-2 { margin-bottom: 0.3rem !important; }
-            .mb-1 { margin-bottom: 0.2rem !important; }
-            .p-8 { padding: 1.2rem !important; }
-            .p-6 { padding: 0.8rem !important; }
-            .p-4 { padding: 0.6rem !important; }
-            .p-3 { padding: 0.5rem !important; }
-            .p-2 { padding: 0.4rem !important; }
-            .gap-6 { gap: 0.8rem !important; }
-            .gap-4 { gap: 0.6rem !important; }
-            .gap-3 { gap: 0.5rem !important; }
-            .gap-1 { gap: 0.2rem !important; }
-            .leading-relaxed { line-height: 1.3 !important; }
-            
-            /* Forzar salto de página después del header */
-            .gradient-bg { page-break-after: avoid !important; }
-            .md\\:col-span-1 { page-break-inside: avoid !important; }
-            
-            /* Controlar altura de secciones */
-            section { break-inside: avoid !important; }
-            .border-l-4 { break-inside: avoid !important; margin-bottom: 0.5rem !important; }
-            
-            /* Optimizar grid para impresión */
-            .grid.md\\:grid-cols-3 { 
-                display: block !important; 
-                columns: 2 !important; 
-                column-gap: 1rem !important;
-                column-fill: balance !important;
-            }
-            .md\\:col-span-1, .md\\:col-span-2 { 
-                column-span: none !important; 
-                break-inside: avoid !important;
-                display: inline-block !important;
-                width: 100% !important;
-            }
+            html, body { background: white !important; }
+            .no-break { break-inside: avoid; page-break-inside: avoid; }
+            .gradient-bg { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
         }
     </style>
 </head>
@@ -175,7 +71,7 @@
             <!-- Left Column -->
             <div class="md:col-span-1 bg-gray-100 p-6">
                 <!-- Certificaciones -->
-                <section class="mb-8">
+                <section class="mb-8 no-break">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">
                         <i class="fas fa-certificate mr-2 text-blue-600"></i>Certificaciones
                     </h3>
@@ -212,7 +108,7 @@
                 </section>
 
                 <!-- Tecnologías -->
-                <section class="mb-8">
+                <section class="mb-8 no-break">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">
                         <i class="fas fa-cogs mr-2 text-blue-600"></i>Tecnologías
                     </h3>
@@ -304,6 +200,19 @@
                             </div>
                         </div>
                         <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Lenguajes de Programación</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">JavaScript</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">TypeScript</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Node.js</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Bash/Shell</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">PowerShell</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">YAML</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">JSON</span>
+                            </div>
+                        </div>
+                        <div>
                             <h4 class="text-sm font-semibold text-gray-700 mb-2">Seguridad</h4>
                             <div class="flex flex-wrap gap-1">
                                 <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">OWASP</span>
@@ -319,7 +228,7 @@
                 </section>
 
                 <!-- Cumplimiento y Seguridad -->
-                <section class="mb-8">
+                <section class="mb-8 no-break">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b-2 border-red-500 pb-2">
                         <i class="fas fa-shield-alt mr-2 text-red-600"></i>Cumplimiento y Seguridad
                     </h3>
@@ -344,7 +253,7 @@
                 </section>
 
                 <!-- Educación -->
-                <section>
+                <section class="no-break">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b-2 border-purple-500 pb-2">
                         <i class="fas fa-graduation-cap mr-2 text-purple-600"></i>Educación
                     </h3>
@@ -367,7 +276,7 @@
             <!-- Right Column -->
             <div class="md:col-span-2 p-6">
                 <!-- Perfil Profesional -->
-                <section class="mb-8">
+                <section class="mb-8 no-break">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">
                         <i class="fas fa-user-circle mr-2 text-blue-600"></i>Perfil Profesional
                     </h3>
@@ -382,7 +291,7 @@
                         <i class="fas fa-briefcase mr-2 text-blue-600"></i>Experiencia Profesional
                     </h3>
                     <div class="space-y-6">
-                        <div class="border-l-4 border-blue-500 pl-12 relative">
+                        <div class="border-l-4 border-blue-500 pl-12 relative no-break">
                             <div class="absolute w-16 h-16 bg-blue-500 rounded-full -left-8 top-0 flex items-center justify-center">
                                 <span class="text-xs text-white font-medium text-center leading-tight">2024<br>Actual</span>
                             </div>
@@ -402,7 +311,7 @@
                             </div>
                         </div>
 
-                        <div class="border-l-4 border-blue-500 pl-12 relative">
+                        <div class="border-l-4 border-blue-500 pl-12 relative no-break">
                             <div class="absolute w-16 h-16 bg-blue-500 rounded-full -left-8 top-0 flex items-center justify-center">
                                 <span class="text-xs text-white font-medium text-center leading-tight">2022<br>2024</span>
                             </div>
@@ -419,7 +328,7 @@
                             </div>
                         </div>
 
-                        <div class="border-l-4 border-blue-500 pl-12 relative">
+                        <div class="border-l-4 border-blue-500 pl-12 relative no-break">
                             <div class="absolute w-16 h-16 bg-blue-500 rounded-full -left-8 top-0 flex items-center justify-center">
                                 <span class="text-xs text-white font-medium text-center leading-tight">2020<br>2021</span>
                             </div>
@@ -436,7 +345,7 @@
                             </div>
                         </div>
 
-                        <div class="border-l-4 border-blue-500 pl-12 relative">
+                        <div class="border-l-4 border-blue-500 pl-12 relative no-break">
                             <div class="absolute w-16 h-16 bg-blue-500 rounded-full -left-8 top-0 flex items-center justify-center">
                                 <span class="text-xs text-white font-medium text-center leading-tight">2019<br>2020</span>
                             </div>
@@ -456,7 +365,7 @@
                 </section>
 
                 <!-- Logros Destacados -->
-                <section>
+                <section class="no-break">
                     <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2">
                         <i class="fas fa-trophy mr-2 text-green-600"></i>Logros Destacados
                     </h3>
@@ -526,18 +435,8 @@
         </div>
     </div>
 
-    <script>
-        // Animate skill bars on page load
-        window.addEventListener('load', function() {
-            const skillBars = document.querySelectorAll('.skill-bar');
-            skillBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0%';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 500);
-            });
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96ab15e3260daec5',t:'MTc1NDQ0NzE0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script type="text/plain" data-disabled="cf-challenge">
+(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params=...";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;...}})();
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97064472a26555c3',t:'MTc1NTQwMzI1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
